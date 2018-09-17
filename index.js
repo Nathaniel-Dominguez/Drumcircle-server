@@ -28,7 +28,7 @@ function fromRequest(req){
     return null;
 }
 
-
+// console.log(process.env)
 // Controllers
 // All auth routes are protected except for POST to /auth/login and /auth/signup
 // Remember to pass the JWT_SECRET
