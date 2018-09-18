@@ -25,7 +25,6 @@ router.post('/login', (req, res) => {
     const token = jwt.sign(user.toJSON(), process.env.JWT_SECRET, {
       expiresIn: 60 * 60 * 24
     });
-
     // Send that token and the user info
     res.send({ user: user, token: token });
   })
@@ -66,6 +65,13 @@ router.post('/signup', function(req, res) {
   .catch((err) => {
     console.log('err', err);
     res.status(500).send('Database Error! :(');
+  });
+});
+
+router.get('/users', function (req, res) {
+  db.User.find().then(function (userArr) {
+    userArr.map(function (user){return user.toJSON()});
+    res.send(userArr);
   });
 });
 
