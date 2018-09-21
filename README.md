@@ -43,4 +43,3 @@ POST | /auth/me/from/token | Checks if token is present on browser refresh
 * Make more authorized pages
 * Use cookies instead of localStorage
 
-
